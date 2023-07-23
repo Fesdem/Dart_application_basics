@@ -4,6 +4,8 @@ void main() {
   for (int i = 0; i < 2; i++) {
     print('hello ${i + 1}');
   }
+  bool firbool = true;
+  print(firbool);
   num x = 42;
   print(x.runtimeType);
   var numbers = [
