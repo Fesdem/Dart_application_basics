@@ -1,5 +1,13 @@
 import 'dart:math';
 
+enum Content {
+  post,
+  reel,
+  story,
+  //The above enum is a way to create a class in dart, It must be created
+  //outside the void main and used inside the void main.
+}
+
 void main() {
   for (int i = 0; i < 2; i++) {
     print('hello ${i + 1}');
@@ -163,13 +171,61 @@ void main() {
     numb++;
   }
 
-  bool ihavepost = true;
-  int countofpost = 5;
-  while (ihavepost) {
+  int countofpost = 7;
+  while (countofpost > 0) {
+    /// Condition is checked here
     print('You have another post');
     countofpost--;
-    if (countofpost == 0) {
-      ihavepost = false;
+    if (countofpost == 5) {
+      print('Break!!!');
+      break; // Break takes you out of the loop system
     }
+  }
+
+  //For loop introduction
+  //The for loop contains the varianle initialised, the conditional statement,
+  //and the command. e.g
+  var i;
+  var postcount = 10;
+  var reelcount = 5;
+  var storycount = 7;
+  var selectedContent = Content.reel;
+
+  for (i = 1; i < countofpost && i != 0; i = i + 1) {
+    // The above is just show
+    //that you can combine two or more conditional statement in dart
+    if (i == 3) {
+      break;
+    }
+    print('You have another post under the for loop');
+  }
+
+  for (i = 0; i < countofpost; i++) {
+    if (i % 2 == 0) {
+      print('$i is okay');
+      continue;
+    } //Continue above is used to continue the line of code after an if command
+    //has been executed in the for loop
+    print(i);
+  }
+
+  switch (selectedContent) {
+    case Content.post:
+      for (i = 1; i <= postcount; i++) {
+        print('Post number $i');
+      }
+      break;
+
+         case Content.reel:
+      for (i = 1; i <= reelcount; i++) {
+        print('Reel number $i');
+      }
+      break;
+
+         case Content.story:
+      for (i = 1; i <= storycount; i++) {
+        print('Story number $i');
+      }
+      break;
   }
 }
